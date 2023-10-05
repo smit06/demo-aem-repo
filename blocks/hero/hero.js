@@ -1,4 +1,4 @@
-function headerShow () {
+export default function headerShow () {
     var getHeader = document.querySelector('.header > div > div');
     run().then( function(response){
         var html = document.createElement("html");
