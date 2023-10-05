@@ -5,7 +5,6 @@ const isDesktop = window.matchMedia('(min-width: 900px)');
 
 let headerShow = function(block) {
     run().then( function(response){
-        debugger;
         var getHeader = document.querySelector('.header > div > div');
         var html = document.createElement("html");
         html.innerHTML = response;
