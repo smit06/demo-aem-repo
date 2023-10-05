@@ -1,9 +1,10 @@
-export default function headerShow () {
-    var getHeader = document.querySelector('.header > div > div');
+export default function decorate(block) {
     run().then( function(response){
+        var quote = block.querySelector(":scope > div > div");
         var html = document.createElement("html");
         html.innerHTML = response;
         var body = html.querySelector(".aem-Grid").children;
+        var getHeader = quote.closet('header > div > div');
         getHeader.innerHTML = body;
     })
 
