@@ -1,4 +1,8 @@
-export default function decorate(block) {
+import { headerShow, run } from '../../scripts/lib-franklin.js';
+
+
+
+export default function headerShow(block) {
     run().then( function(response){
         var quote = block.querySelector(":scope > div > div");
         var html = document.createElement("html");
