@@ -3,7 +3,42 @@ import { getMetadata, decorateIcons } from '../../scripts/lib-franklin.js';
 // media query match that indicates mobile/tablet width
 const isDesktop = window.matchMedia('(min-width: 900px)');
 
-console.log("Smit");
+let headerShow = function(block) {
+    run().then( function(response){
+        debugger;
+        var getHeader = document.querySelector('.header > div > div');
+        var html = document.createElement("html");
+        html.innerHTML = response;
+        var body = html.querySelector(".aem-Grid").children;
+        getHeader.append('');
+    })
+
+}
+
+
+
+let  run =  function() {
+ 
+    return new Promise( (resolve, reject) => {
+        // Creating Our XMLHttpRequest object 
+        let xhr = new XMLHttpRequest();
+     
+        // Making our connection  
+        let url = 'https://qa.tataaia.com/content/experience-fragments/tataaia_life_insuran/en/aem_demo/xfheader/master.html';
+        xhr.open("GET", url, true);
+     
+        // function execute after request is successful 
+        xhr.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                resolve(this.responseText);
+            }
+        }
+        // Sending our request 
+        xhr.send();
+    })
+}
+
+headerShow();
 
 function closeOnEscape(e) {
   if (e.code === 'Escape') {
