@@ -9,8 +9,8 @@ let headerShow = function(block) {
         var getHeader = document.querySelector('.header > div > div');
         var html = document.createElement("html");
         html.innerHTML = response;
-        var body = html.querySelector(".aem-Grid").children;
-        getHeader.innerHTML = body
+        var aemGrid = html.querySelector(".aem-Grid");
+        getHeader.innerHTML = aemGrid.innerHTML; 
     })
 
 }
