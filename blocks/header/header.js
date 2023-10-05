@@ -10,7 +10,7 @@ let headerShow = function(block) {
         var html = document.createElement("html");
         html.innerHTML = response;
         var body = html.querySelector(".aem-Grid").children;
-        getHeader.append('');
+        getHeader.innerHTML = body
     })
 
 }
